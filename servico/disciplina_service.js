@@ -35,4 +35,13 @@ class DisciplinaService {
 
         disciplina[0].adicionar(aluno)
     }
+
+    atualizar(id, novoNome) {
+        const disciplina = this.pesquisarPorId(id)
+        if(disciplina.length > 0) {
+            this.repositorio.atualizar(id, nome)
+        } else {
+            throw new Error('Disciplina não encontrada!')
+        }
+    }
 }

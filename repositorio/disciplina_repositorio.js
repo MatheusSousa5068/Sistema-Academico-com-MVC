@@ -22,4 +22,16 @@ class DisciplinaRepositorio {
     listar() {
         return this.disciplinas
     }
+
+    atualizar(id, novoNome) {
+        const indxDisciplinaAAtualizar = this.disciplinas.findIndex(
+            (disciplina) => {
+                disciplina.id === id
+            }
+        )
+
+        if(indxDisciplinaAAtualizar > -1) {
+            this.disciplinas[indxDisciplinaAAtualizar].nome = novoNome
+        }
+    }
 }
